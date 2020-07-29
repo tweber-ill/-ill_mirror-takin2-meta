@@ -23,7 +23,11 @@ git clone https://code.ill.fr/scientific-software/takin/mag-core.git
 git clone https://code.ill.fr/scientific-software/takin/tlibs.git
 git clone https://code.ill.fr/scientific-software/takin/tlibs2.git
 git clone https://code.ill.fr/scientific-software/takin/data.git
-#git clone https://code.ill.fr/tweber/takin-mnsi.git
+
+mkdir plugins
+pushd plugins
+git clone https://code.ill.fr/scientific-software/takin/plugins/mnsi.git
+popd
 
 
 # make links
