@@ -15,6 +15,8 @@ fi
 mkdir takin
 cd takin
 
+
+# clone all sub-repos
 git clone https://code.ill.fr/scientific-software/takin/meta.git
 git clone https://code.ill.fr/scientific-software/takin/core.git
 git clone https://code.ill.fr/scientific-software/takin/mag-core.git
@@ -22,3 +24,13 @@ git clone https://code.ill.fr/scientific-software/takin/tlibs.git
 git clone https://code.ill.fr/scientific-software/takin/tlibs2.git
 git clone https://code.ill.fr/scientific-software/takin/data.git
 #git clone https://code.ill.fr/tweber/takin-mnsi.git
+
+
+# make links
+pushd core
+ln -sf ../data
+ln -sf ../tlibs
+popd
+
+pushd mag-core
+ln -sf ../tlibs2
