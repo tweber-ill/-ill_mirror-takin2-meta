@@ -34,3 +34,4 @@ popd
 
 pushd mag-core
 ln -sf ../tlibs2
+popd
