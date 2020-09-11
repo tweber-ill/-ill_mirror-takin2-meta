@@ -28,6 +28,6 @@ tar xvf "${MINUIT_LOCAL}"
 
 
 cd "${MINUIT_DIR}"
-./configure
+./configure --disable-openmp
 make -j${NUM_CORES} && sudo make install-strip
 
