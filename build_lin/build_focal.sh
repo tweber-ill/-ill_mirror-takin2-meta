@@ -7,6 +7,7 @@
 #
 
 # individual building steps
+setup_buildenv=1
 setup_externals=1
 setup_externals2=1
 build_externals=1
@@ -23,6 +24,17 @@ TAKIN_ROOT=$(dirname $0)/../..
 cd "${TAKIN_ROOT}"
 TAKIN_ROOT=$(pwd)
 echo -e "Takin root dir: ${TAKIN_ROOT}"
+
+
+if [ $setup_buildenv -ne 0 ]; then
+	echo -e "\n================================================================================"
+	echo -e "Setting up build environment..."
+	echo -e "================================================================================\n"
+
+	pushd "${TAKIN_ROOT}/core"
+		./setup_lin/buildenv_focal.sh
+	popd
+fi
 
 
 if [ $setup_externals -ne 0 ]; then

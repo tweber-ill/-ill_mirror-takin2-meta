@@ -11,7 +11,7 @@ NUM_CORES=$(nproc)
 
 MINUIT_REMOTE=http://www.cern.ch/mathlibs/sw/5_34_14/Minuit2/Minuit2-5.34.14.tar.gz
 MINUIT_LOCAL=${MINUIT_REMOTE##*[/\\]}
-MINUIT_DIR=${MINUIT_LOCAL//.tar.gz/}
+MINUIT_DIR=${MINUIT_LOCAL%.tar.gz}
 
 
 rm -f "${MINUIT_LOCAL}"
