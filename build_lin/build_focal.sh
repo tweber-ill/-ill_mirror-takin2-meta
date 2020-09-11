@@ -9,6 +9,7 @@
 # individual building steps
 setup_externals=1
 setup_externals2=1
+build_externals=1
 build_takin=1
 build_takin2=1
 build_package=1
@@ -44,6 +45,17 @@ if [ $setup_externals2 -ne 0 ]; then
 	pushd "${TAKIN_ROOT}/mag-core"
 		rm -rf ext
 		./setup/setup_externals.sh
+	popd
+fi
+
+
+if [ $build_externals -ne 0 ]; then
+	echo -e "\n================================================================================"
+	echo -e "Building external libraries (Minuit)..."
+	echo -e "================================================================================\n"
+
+	pushd "${TAKIN_ROOT}/tmp"
+		"${TAKIN_ROOT}"/meta/externals/build_minuit.sh
 	popd
 fi
 
