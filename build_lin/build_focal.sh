@@ -101,9 +101,9 @@ if [ $build_takin2 -ne 0 ]; then
 
 
 		# copy tools to Takin main dir
-		cp -v tools/cif2xml/cif2xml core/bin/
-		cp -v tools/cif2xml/findsg core/bin/
-		cp -v tools/pol/pol core/bin/
+		cp -v tools/cif2xml/cif2xml "${TAKIN_ROOT}"/core/bin/
+		cp -v tools/cif2xml/findsg "${TAKIN_ROOT}"/core/bin/
+		cp -v tools/pol/pol "${TAKIN_ROOT}"/core/bin/
 	popd
 fi
 
@@ -127,6 +127,6 @@ if [ $build_package -ne 0 ]; then
 	else
 		echo -e "\n================================================================================"
 		echo -e "Error: Takin package could not be built!"
-		echo -e "================================================================================\n"	
+		echo -e "================================================================================\n"
 	fi
 fi
