@@ -1,17 +1,17 @@
 #!/bin/bash
 #
-# takin bionic build script
+# takin mingw build script
 # @author Tobias Weber <tweber@ill.fr>
 # @date sep-2020
 # @license GPLv2
 #
 
 # individual building steps
-setup_buildenv=1
+setup_buildenv=0
 setup_externals=1
-setup_externals2=0
+setup_externals2=1
 build_externals=1
-build_takin=1
+build_takin=0
 build_takin2=0
 build_package=1
 
@@ -32,7 +32,8 @@ if [ $setup_buildenv -ne 0 ]; then
 	echo -e "================================================================================\n"
 
 	pushd "${TAKIN_ROOT}/core"
-		./setup_lin/buildenv_focal.sh
+	# TODO: set up mingw packages
+	#	./setup_lin/buildenv_focal.sh
 	popd
 fi
 
@@ -67,7 +68,7 @@ if [ $build_externals -ne 0 ]; then
 	echo -e "================================================================================\n"
 
 	pushd "${TAKIN_ROOT}/tmp"
-		"${TAKIN_ROOT}"/meta/externals/build_minuit.sh
+		"${TAKIN_ROOT}"/meta/externals/build_minuit.sh --mingw
 	popd
 fi
 
@@ -82,8 +83,8 @@ if [ $build_takin -ne 0 ]; then
 
 		mkdir -p build
 		cd build
-		cmake -DDEBUG=False -DUSE_CUSTOM_THREADPOOL=True ..
-		make -j${NUM_CORES}
+		mingw64-cmake -DDEBUG=False -DBUILD_FOR_MINGW=True ..
+		mingw64-make #-j${NUM_CORES}
 	popd
 fi
 
@@ -98,14 +99,13 @@ if [ $build_takin2 -ne 0 ]; then
 		mkdir -p build
 		cd build
 
-		CC=clang-10 CXX=clang++-10 cmake -DCMAKE_BUILD_TYPE=Release -DONLY_BUILD_FINISHED=True ..
-		make -j${NUM_CORES}
-
+		mingw64-cmake -DCMAKE_BUILD_TYPE=Release -DONLY_BUILD_FINISHED=True ..
+		mingw64-make #-j${NUM_CORES}
 
 		# copy tools to Takin main dir
-		cp -v tools/cif2xml/cif2xml "${TAKIN_ROOT}"/core/bin/
-		cp -v tools/cif2xml/findsg "${TAKIN_ROOT}"/core/bin/
-		cp -v tools/pol/pol "${TAKIN_ROOT}"/core/bin/
+		cp -v tools/cif2xml/cif2xml.exe "${TAKIN_ROOT}"/core/bin/
+		cp -v tools/cif2xml/findsg.exe "${TAKIN_ROOT}"/core/bin/
+		cp -v tools/pol/pol.exe "${TAKIN_ROOT}"/core/bin/
 	popd
 fi
 
@@ -116,15 +116,18 @@ if [ $build_package -ne 0 ]; then
 	echo -e "================================================================================\n"
 
 	pushd "${TAKIN_ROOT}"
-		rm -rf tmp
+		rm -rf tmp-mingw
 		cd core
-		./setup_lin/mkdeb_bionic.sh "${TAKIN_ROOT}/tmp/takin"
+		./setup_mingw/cp_mingw_takin.sh "${TAKIN_ROOT}/tmp-mingw/takin"
+
+		cd ../tmp-mingw
+		zip -9 -r takin.zip takin
 	popd
 
 
-	if [ -e  "${TAKIN_ROOT}/tmp/takin.deb" ]; then
+	if [ -e  "${TAKIN_ROOT}/tmp-mingw/takin.zip" ]; then
 		echo -e "\n================================================================================"
-		echo -e "The built Takin package can be found here:\n\t${TAKIN_ROOT}/tmp/takin.deb"
+		echo -e "The built Takin package can be found here:\n\t${TAKIN_ROOT}/tmp/takin.zip"
 		echo -e "================================================================================\n"
 	else
 		echo -e "\n================================================================================"

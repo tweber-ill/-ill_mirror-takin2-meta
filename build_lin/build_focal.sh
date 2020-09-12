@@ -78,7 +78,8 @@ if [ $build_takin -ne 0 ]; then
 	echo -e "================================================================================\n"
 
 	pushd "${TAKIN_ROOT}/core"
-		rm -rf build
+		./setup/clean.sh
+
 		mkdir -p build
 		cd build
 		cmake -DDEBUG=False ..
