@@ -6,6 +6,7 @@
 # @license GPLv2
 #
 
+
 # individual building steps
 setup_buildenv=1
 setup_externals=1
@@ -14,6 +15,8 @@ build_takin=1
 build_takin2=1
 build_package=1
 
+
+export MACOSX_DEPLOYMENT_TARGET=10.10
 
 NUM_CORES=$(nproc)
 
