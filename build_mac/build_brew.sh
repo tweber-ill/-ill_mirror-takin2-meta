@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# takin focal build script
+# takin brew build script
 # @author Tobias Weber <tweber@ill.fr>
 # @date sep-2020
 # @license GPLv2
