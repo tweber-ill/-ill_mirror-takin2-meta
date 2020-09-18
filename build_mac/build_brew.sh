@@ -73,7 +73,7 @@ if [ $build_takin -ne 0 ]; then
 
 		mkdir -p build
 		cd build
-		cmake -DDEBUG=False -DBUILD_FOR_MAC=True ..
+		cmake -DDEBUG=False ..
 		make -j${NUM_CORES}
 	popd
 fi
