@@ -102,9 +102,9 @@ if [ $build_takin2 -ne 0 ]; then
 
 
 		# copy tools to Takin main dir
-		cp -v tools/cif2xml/cif2xml "${TAKIN_ROOT}"/core/bin/
-		cp -v tools/cif2xml/findsg "${TAKIN_ROOT}"/core/bin/
-		cp -v tools/pol/pol "${TAKIN_ROOT}"/core/bin/
+		cp -v tools/cif2xml/takin_cif2xml "${TAKIN_ROOT}"/core/bin/
+		cp -v tools/cif2xml/takin_findsg "${TAKIN_ROOT}"/core/bin/
+		cp -v tools/pol/takin_pol "${TAKIN_ROOT}"/core/bin/
 	popd
 fi
 

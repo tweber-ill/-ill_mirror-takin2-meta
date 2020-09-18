@@ -103,9 +103,9 @@ if [ $build_takin2 -ne 0 ]; then
 		mingw64-make #-j${NUM_CORES}
 
 		# copy tools to Takin main dir
-		cp -v tools/cif2xml/cif2xml.exe "${TAKIN_ROOT}"/core/bin/
-		cp -v tools/cif2xml/findsg.exe "${TAKIN_ROOT}"/core/bin/
-		cp -v tools/pol/pol.exe "${TAKIN_ROOT}"/core/bin/
+		cp -v tools/cif2xml/takin_cif2xml.exe "${TAKIN_ROOT}"/core/bin/
+		cp -v tools/cif2xml/takin_findsg.exe "${TAKIN_ROOT}"/core/bin/
+		cp -v tools/pol/takin_pol.exe "${TAKIN_ROOT}"/core/bin/
 	popd
 fi
 
