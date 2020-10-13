@@ -9,10 +9,10 @@
 # individual building steps
 setup_buildenv=1
 setup_externals=1
-setup_externals2=0
+setup_externals2=1
 build_externals=1
 build_takin=1
-build_takin2=0
+build_takin2=1
 build_package=1
 
 
