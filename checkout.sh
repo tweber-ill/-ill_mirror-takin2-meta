@@ -62,6 +62,7 @@ ln -sf ../tlibs
 popd
 
 pushd mag-core
+ln -sf ../data
 ln -sf ../tlibs2
 popd
 
