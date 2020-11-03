@@ -4,9 +4,6 @@
 # @author Tobias Weber <tweber@ill.fr>
 # @date sep-2020
 # @license GPLv2
-#
-# set up remote repo using, e.g.: git remote add ${mirror_from} https://code.ill.fr/scientific-software/takin/meta.git
-#
 
 
 mirror_from=org_repo
