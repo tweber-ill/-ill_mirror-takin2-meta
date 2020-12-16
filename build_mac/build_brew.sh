@@ -15,6 +15,8 @@ build_takin=1
 build_takin2=1
 build_package=1
 
+use_syspy=1
+
 
 export MACOSX_DEPLOYMENT_TARGET=10.10
 
@@ -125,6 +127,13 @@ if [ $build_package -ne 0 ]; then
 		echo -e "Fixing dynamic binding for local libraries..."
 		echo -e "================================================================================\n"
 		./setup_mac/fix_names.sh
+
+		if [$use_syspy -ne 0 ]; then
+			echo -e "\n================================================================================"
+			echo -e "Using system python frameworks instead..."
+			echo -e "================================================================================\n"
+			./setup_mac/use_syspy.sh
+		fi
 
 		echo -e "\n================================================================================"
 		echo -e "Building Takin package..."
