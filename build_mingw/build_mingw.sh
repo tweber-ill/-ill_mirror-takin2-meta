@@ -83,7 +83,7 @@ if [ $build_takin -ne 0 ]; then
 
 		mkdir -p build
 		cd build
-		mingw64-cmake -DDEBUG=False -DBUILD_FOR_MINGW=True ..
+		mingw64-cmake -DDEBUG=False ..
 		mingw64-make #-j${NUM_CORES}
 	popd
 fi
