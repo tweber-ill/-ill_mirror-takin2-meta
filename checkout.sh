@@ -44,6 +44,7 @@ ${GIT} clone https://code.ill.fr/scientific-software/takin/mag-core.git
 ${GIT} clone https://code.ill.fr/scientific-software/takin/tlibs.git
 ${GIT} clone https://code.ill.fr/scientific-software/takin/tlibs2.git
 ${GIT} clone https://code.ill.fr/scientific-software/takin/data.git
+${GIT} clone https://code.ill.fr/scientific-software/takin/paths.git
 
 mkdir plugins
 pushd plugins
@@ -63,6 +64,10 @@ popd
 
 pushd mag-core
 ln -sf ../data
+ln -sf ../tlibs2
+popd
+
+pushd paths
 ln -sf ../tlibs2
 popd
 
