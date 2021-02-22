@@ -16,7 +16,7 @@ fi
 
 
 
-MINUIT_REMOTE=https://codeload.github.com/root-project/root/zip/master
+MINUIT_REMOTE=http://www.cern.ch/mathlibs/sw/5_34_14/Minuit2/Minuit2-5.34.14.tar.gz
 MINUIT_LOCAL=${MINUIT_REMOTE##*[/\\]}
 MINUIT_DIR=${MINUIT_LOCAL%.tar.gz}
 
@@ -31,18 +31,16 @@ if ! wget ${MINUIT_REMOTE}; then
 fi
 
 
-unzip "${MINUIT_LOCAL}"
+tar xvf "${MINUIT_LOCAL}"
 
 
-#cd "${MINUIT_DIR}/math/minuit2"
-cd root-master/math/minuit2/
-mkdir build && cd build
+cd "${MINUIT_DIR}"
 
 
 if BUILD_FOR_MINGW; then
-	mingw64-cmake ..
+	mingw64-configure --disable-openmp
 	mingw64-make -j${NUM_CORES} && sudo mingw64-make install-strip
 else
-	cmake ..
+	./configure --disable-openmp
 	make -j${NUM_CORES} && sudo make install-strip
 fi
