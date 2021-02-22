@@ -15,6 +15,7 @@ declare -a repos_orig=(
 	"https://code.ill.fr/scientific-software/takin/tlibs"
 	"https://code.ill.fr/scientific-software/takin/tlibs2"
 	"https://code.ill.fr/scientific-software/takin/data"
+	"https://code.ill.fr/scientific-software/takin/paths"
 	"https://code.ill.fr/scientific-software/takin/plugins/mnsi"
 )
 
@@ -25,6 +26,7 @@ declare -a repos_mirror=(
 	"https://github.com/tweber-ill/ill_mirror-takin2-tlibs"
 	"https://github.com/tweber-ill/ill_mirror-takin2-tlibs2"
 	"https://github.com/tweber-ill/ill_mirror-takin2-data"
+	"https://github.com/tweber-ill/ill_mirror-takin2-paths"
 	"https://github.com/tweber-ill/ill_mirror-takin2-mnsi"
 )
 

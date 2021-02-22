@@ -16,6 +16,7 @@ declare -a repo_dirs=(
 	"ill_mirror-takin2-tlibs"
 	"ill_mirror-takin2-tlibs2"
 	"ill_mirror-takin2-data"
+	"ill_mirror-takin2-paths"
 	"ill_mirror-takin2-mnsi"
 )
 
