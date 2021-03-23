@@ -41,8 +41,8 @@ mkdir build && cd build
 
 if BUILD_FOR_MINGW; then
 	mingw64-cmake ..
-	mingw64-make -j${NUM_CORES} && sudo mingw64-make install-strip
+	mingw64-make -j${NUM_CORES} && sudo mingw64-make install
 else
 	cmake ..
-	make -j${NUM_CORES} && sudo make install-strip
+	make -j${NUM_CORES} && sudo make install
 fi
