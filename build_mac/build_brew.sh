@@ -134,6 +134,7 @@ if [ $build_package -ne 0 ]; then
 			echo -e "Using system python frameworks instead..."
 			echo -e "================================================================================\n"
 			./setup_mac/use_syspy.sh
+			./setup_mac/clean_py.sh
 		fi
 
 		echo -e "\n================================================================================"
