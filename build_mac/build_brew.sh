@@ -76,7 +76,7 @@ if [ $build_takin -ne 0 ]; then
 
 		mkdir -p build
 		cd build
-		cmake -DDEBUG=False ..
+		cmake -DDISABLE_INTERPROC_XSI=True -DDEBUG=False ..
 		make -j${NUM_CORES}
 	popd
 fi
