@@ -36,7 +36,7 @@ build_takin=1
 build_takin2=1
 build_package=1
 
-use_syspy=1
+use_syspy=0
 
 
 export MACOSX_DEPLOYMENT_TARGET=10.10
