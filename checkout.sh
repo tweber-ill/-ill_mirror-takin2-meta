@@ -69,6 +69,7 @@ ${GIT} clone https://code.ill.fr/scientific-software/takin/paths.git
 
 mkdir plugins
 pushd plugins
+${GIT} clone https://code.ill.fr/scientific-software/takin/plugins/magnons.git
 ${GIT} clone https://code.ill.fr/scientific-software/takin/plugins/mnsi.git
 popd
 
