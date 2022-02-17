@@ -59,7 +59,7 @@ echo -e "\n---------------------------------------------------------------------
 echo -e "Cloning all Takin repositories..."
 echo -e "--------------------------------------------------------------------------------"
 
-${GIT} clone https://code.ill.fr/scientific-software/takin/meta.git
+${GIT} clone https://code.ill.fr/scientific-software/takin/setup.git
 ${GIT} clone https://code.ill.fr/scientific-software/takin/core.git
 ${GIT} clone https://code.ill.fr/scientific-software/takin/mag-core.git
 ${GIT} clone https://code.ill.fr/scientific-software/takin/tlibs.git

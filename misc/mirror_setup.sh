@@ -30,7 +30,7 @@
 mirror_from=org_repo
 
 declare -a repos_orig=(
-	"https://code.ill.fr/scientific-software/takin/meta"
+	"https://code.ill.fr/scientific-software/takin/setup"
 	"https://code.ill.fr/scientific-software/takin/core"
 	"https://code.ill.fr/scientific-software/takin/mag-core"
 	"https://code.ill.fr/scientific-software/takin/tlibs"

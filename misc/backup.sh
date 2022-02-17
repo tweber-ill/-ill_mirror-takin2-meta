@@ -33,7 +33,7 @@ declare -a REPOS_ILL=(
 	"https://code.ill.fr/scientific-software/takin/mag-core"
 	"https://code.ill.fr/scientific-software/takin/tlibs"
 	"https://code.ill.fr/scientific-software/takin/tlibs2"
-	"https://code.ill.fr/scientific-software/takin/meta"
+	"https://code.ill.fr/scientific-software/takin/setup"
 	"https://code.ill.fr/scientific-software/takin/data"
 	"https://code.ill.fr/scientific-software/takin/plugins/mnsi"
 	"https://code.ill.fr/scientific-software/takin/paths"

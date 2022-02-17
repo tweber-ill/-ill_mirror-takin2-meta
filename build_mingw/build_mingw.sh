@@ -89,7 +89,7 @@ if [ $build_externals -ne 0 ]; then
 	echo -e "================================================================================\n"
 
 	pushd "${TAKIN_ROOT}/tmp"
-		"${TAKIN_ROOT}"/meta/externals/build_minuit.sh --mingw
+		"${TAKIN_ROOT}"/setup/externals/build_minuit.sh --mingw
 	popd
 fi
 
