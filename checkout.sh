@@ -87,6 +87,7 @@ popd
 pushd mag-core
 ln -sf ../data
 ln -sf ../tlibs2
+ln -sf ../paths/src pathslib
 popd
 
 pushd paths
