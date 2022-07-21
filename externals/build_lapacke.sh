@@ -1,13 +1,13 @@
 #!/bin/bash
 #
-# builds minuit
+# builds lapack and lapacke
 # @author Tobias Weber <tweber@ill.fr>
-# @date sep-2020
+# @date jul-2022
 # @license GPLv2
 #
 # ----------------------------------------------------------------------------
 # Takin (inelastic neutron scattering software package)
-# Copyright (C) 2017-2021  Tobias WEBER (Institut Laue-Langevin (ILL),
+# Copyright (C) 2017-2022  Tobias WEBER (Institut Laue-Langevin (ILL),
 #                          Grenoble, France).
 # Copyright (C) 2013-2017  Tobias WEBER (Technische Universitaet Muenchen
 #                          (TUM), Garching, Germany).
@@ -37,30 +37,30 @@ fi
 
 
 
-MINUIT_REMOTE=https://codeload.github.com/root-project/root/zip/master
-MINUIT_LOCAL=${MINUIT_REMOTE##*[/\\]}
+LAPACK_REMOTE=https://codeload.github.com/Reference-LAPACK/lapack/zip/refs/heads/master
+LAPACK_LOCAL=${LAPACK_REMOTE##*[/\\]}
 
 
-rm -f "${MINUIT_LOCAL}"
+rm -f "${LAPACK_LOCAL}"
 
 
-if ! wget ${MINUIT_REMOTE}; then
-	echo -e "Could not download ${MINUIT_REMOTE}."
+if ! wget ${LAPACK_REMOTE}; then
+	echo -e "Could not download ${LAPACK_REMOTE}."
 	exit -1
 fi
 
 
-unzip "${MINUIT_LOCAL}"
+unzip "${LAPACK_LOCAL}"
 
 
-cd root-master/math/minuit2/
+cd lapack-master
 mkdir build && cd build
 
 
-if $BUILD_FOR_MINGW; then
-	mingw64-cmake -DCMAKE_BUILD_TYPE=Release ..
+if BUILD_FOR_MINGW; then
+	mingw64-cmake -DCMAKE_BUILD_TYPE=Release -DLAPACKE=TRUE ..
 	mingw64-make -j${NUM_CORES} && sudo mingw64-make install
 else
-	cmake -DCMAKE_BUILD_TYPE=Release ..
+	cmake -DCMAKE_BUILD_TYPE=Release -DLAPACKE=TRUE -DBUILD_SHARED_LIBS=TRUE ..
 	make -j${NUM_CORES} && sudo make install
 fi
