@@ -57,7 +57,7 @@ cd lapack-master
 mkdir build && cd build
 
 
-if $BUILD_FOR_MINGW; then
+if [ $BUILD_FOR_MINGW -ne 0 ]; then
 	mingw64-cmake -DCMAKE_BUILD_TYPE=Release -DLAPACKE=TRUE ..
 	mingw64-make -j${NUM_CORES} && sudo mingw64-make install
 else
