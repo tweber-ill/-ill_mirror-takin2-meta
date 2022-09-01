@@ -127,6 +127,10 @@ if [ $build_takin2 -ne 0 ]; then
 		cp -v tools/cif2xml/takin_cif2xml.exe "${TAKIN_ROOT}"/core/bin/
 		cp -v tools/cif2xml/takin_findsg.exe "${TAKIN_ROOT}"/core/bin/
 		cp -v tools/pol/takin_pol.exe "${TAKIN_ROOT}"/core/bin/
+		cp -v tools/bz/takin_bz.exe "${TAKIN_ROOT}"/core/bin/
+		cp -v tools/magdyn/takin_magdyn.exe "${TAKIN_ROOT}"/core/bin/
+		cp -v tools/structfact/takin_structfact.exe "${TAKIN_ROOT}"/core/bin/
+		cp -v tools/magstructfact/takin_magstructfact.exe "${TAKIN_ROOT}"/core/bin/
 	popd
 fi
 
