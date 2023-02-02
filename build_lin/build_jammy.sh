@@ -34,6 +34,7 @@ setup_externals2=1
 build_externals=1
 build_takin=1
 build_takin2=1
+build_plugins=0
 build_package=1
 
 
@@ -134,6 +135,24 @@ if [ $build_takin2 -ne 0 ]; then
 		cp -v tools/moldyn/takin_moldyn "${TAKIN_ROOT}"/core/bin/
 	popd
 fi
+
+
+#if [ $build_plugins -ne 0 ]; then
+#	echo -e "\n================================================================================"
+#	echo -e "Building Takin plugins..."
+#	echo -e "================================================================================\n"
+#
+#	pushd "${TAKIN_ROOT}/plugins/magnons"
+#		rm -rf build
+#		mkdir -p build
+#		cd build
+#		cmake -DCMAKE_BUILD_TYPE=Release ..
+#		make -j${NUM_CORES}
+#
+#		# copy plugin to Takin main dir
+#		cp -v libmagnonmod.so "${TAKIN_ROOT}"/core/plugins/
+#	popd
+#fi
 
 
 if [ $build_package -ne 0 ]; then
