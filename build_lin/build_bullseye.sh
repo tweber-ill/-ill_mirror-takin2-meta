@@ -1,13 +1,13 @@
 #!/bin/bash
 #
 # takin bullseye build script
-# @author Tobias Weber <tweber@ill.fr>
-# @date sep-2020
+# @author Tobias Weber <tweber@ill.fr>, Jens Krüger
+# @date 3 february 2023
 # @license GPLv2
 #
 # ----------------------------------------------------------------------------
 # Takin (inelastic neutron scattering software package)
-# Copyright (C) 2017-2021  Tobias WEBER (Institut Laue-Langevin (ILL),
+# Copyright (C) 2017-2023  Tobias WEBER (Institut Laue-Langevin (ILL),
 #                          Grenoble, France).
 # Copyright (C) 2013-2017  Tobias WEBER (Technische Universitaet Muenchen
 #                          (TUM), Garching, Germany).
