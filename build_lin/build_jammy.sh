@@ -41,6 +41,21 @@ build_package=1
 NUM_CORES=$(nproc)
 
 
+# parse command-line options
+for((arg_idx=1; arg_idx<=$#; ++arg_idx)); do
+	arg="${!arg_idx}"
+	# look for argument identifier
+	if [[ "$arg" =~ [_A-Za-z][_A-Za-z0-9]* ]]; then
+		# get the argument's parameter
+		param_idx=$((arg_idx+1))
+		param="${!param_idx}"
+
+		# set the argument to the given parameter
+		export $arg=${param}
+	fi
+done
+
+
 # get root dir of takin repos
 TAKIN_ROOT=$(dirname $0)/../..
 cd "${TAKIN_ROOT}"
