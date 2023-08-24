@@ -36,7 +36,6 @@ if [ "$1" == "--mingw" ]; then
 fi
 
 
-#MINUIT_REMOTE=https://codeload.github.com/root-project/root/zip/master
 MINUIT_REMOTE=https://codeload.github.com/root-project/root/zip/refs/heads/latest-stable
 MINUIT_LOCAL=${MINUIT_REMOTE##*[/\\]}
 

@@ -38,6 +38,7 @@ declare -a repos_orig=(
 	"https://code.ill.fr/scientific-software/takin/data"
 	"https://code.ill.fr/scientific-software/takin/paths"
 	"https://code.ill.fr/scientific-software/takin/plugins/mnsi"
+	"https://code.ill.fr/scientific-software/takin/plugins/magnons"
 )
 
 declare -a repos_mirror=(
@@ -49,6 +50,7 @@ declare -a repos_mirror=(
 	"https://github.com/tweber-ill/ill_mirror-takin2-data"
 	"https://github.com/tweber-ill/ill_mirror-takin2-paths"
 	"https://github.com/tweber-ill/ill_mirror-takin2-mnsi"
+	"https://github.com/tweber-ill/ill_mirror-takin2-magnons"
 )
 
 

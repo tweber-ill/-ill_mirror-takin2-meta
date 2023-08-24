@@ -36,12 +36,15 @@ declare -a REPOS_ILL=(
 	"https://code.ill.fr/scientific-software/takin/setup"
 	"https://code.ill.fr/scientific-software/takin/data"
 	"https://code.ill.fr/scientific-software/takin/plugins/mnsi"
+	"https://code.ill.fr/scientific-software/takin/plugins/magnons"
 	"https://code.ill.fr/scientific-software/takin/paths"
 	"https://code.ill.fr/tweber/tlibs2_magnon_helpers"
 	"https://code.ill.fr/tweber/hercules"
 	"https://code.ill.fr/tweber/thesis"
 	"https://code.ill.fr/tweber/takin-mnsi"
 	"https://code.ill.fr/tweber/in20tools"
+	"https://github.com/ILLGrenoble/takin"
+	"https://github.com/ILLGrenoble/taspaths"
 )
 
 declare -a REPOS_PRIVATE=(
@@ -50,9 +53,11 @@ declare -a REPOS_PRIVATE=(
 	"https://github.com/t-weber/tlibs"
 	"https://github.com/t-weber/misc"
 	"https://github.com/t-weber/lr1"
+	"https://github.com/t-weber/lalr1"
 	"https://github.com/t-weber/matrix_calc"
 	"https://github.com/t-weber/geo"
 	"https://github.com/t-weber/qm"
+	"https://github.com/t-weber/gl"
 	"https://github.com/t-weber/os-seminar"
 	"https://github.com/t-weber/magtools"
 	"https://github.com/t-weber/libcrystal"
